@@ -42,7 +42,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Register</p>
+      <p class="login-box-msg">Login</p>
       <form action="/postlogin" method="post">
         @csrf
 
