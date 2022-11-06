@@ -24,7 +24,8 @@ class User extends Authenticatable
         'username',
         'alamat',
         'tgl_lahir',
-        'no_hp'
+        'no_hp',
+        'role'
     ];
 
     /**

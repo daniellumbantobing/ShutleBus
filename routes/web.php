@@ -18,12 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[HomeController::class, 'index'])->middleware('auth');;
-
-Route::get('/daftarpengguna',[DaftarPenggunaController::class, 'index']);
 Route::get('/register',[AuthController::class ,'register']);
-
 Route::get('/login',[AuthController::class ,'login'])->name('login');
-
 Route::post('/postregister',[AuthController::class, 'postregister']);
 Route::post('/postlogin',[AuthController::class, 'postlogin']);
 Route::get('/logout',[AuthController::class, 'logout']);
+
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::get('/daftarpengguna',[DaftarPenggunaController::class, 'index']);
+});
+

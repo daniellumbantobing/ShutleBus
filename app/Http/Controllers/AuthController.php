@@ -27,7 +27,7 @@ class AuthController extends Controller
 
 
     public function postregister(Request $request){
-
+       // die(dump($request));
         $request->validate([
             'name' => 'required',
             'username' => 'required|unique:users',
@@ -46,6 +46,7 @@ class AuthController extends Controller
             'alamat' => $request->alamat,
             'tgl_lahir' => date('Y-m-d', strtotime($request->tgl_lahir)),
             'no_hp' => $request->no_hp,
+            'role' => $request->role,
         ]);
 
 
