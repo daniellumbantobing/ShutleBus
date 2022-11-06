@@ -32,6 +32,11 @@
  <link rel="stylesheet" href="admin/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
  <!-- Toastr -->
  <link rel="stylesheet" href="admin/plugins/toastr/toastr.min.css">
+
+ <link rel="stylesheet" href="admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+ <link rel="stylesheet" href="admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+ <link rel="stylesheet" href="admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -44,7 +49,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       {{-- <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="admin//index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -97,7 +102,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="admin//index3.html" class="brand-link">
       <img src="admin/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">ShutleBus</span>
     </a>
@@ -217,6 +222,20 @@
 <!-- Toastr -->
 <script src="admin/plugins/toastr/toastr.min.js"></script>
 
+
+<!-- DataTables  & Plugins -->
+<script src="admin/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="admin/plugins/jszip/jszip.min.js"></script>
+<script src="admin/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="admin/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 <script>
     $(function () {
@@ -377,5 +396,7 @@
       })
     @endif
 </script>
+@yield('footer')
+
 </body>
 </html>

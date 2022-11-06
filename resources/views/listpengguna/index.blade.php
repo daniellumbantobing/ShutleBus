@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Blank Page</h1>
+          <h1>Daftar Pengguna</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,33 @@
         <h3 class="card-title">Title</h3>
       </div>
       <div class="card-body">
-        Start creating your amazing application!
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Username</th>
+              <th>Alamat</th>
+              <th>Email</th>
+              <th>Tanggal Lahir</th>
+              <th>No Hp</th>
+              <th>Role</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($user as $us)
+                <tr>
+                    <td>{{$us->name}}</td>
+                    <td>{{$us->username}}</td>
+                    <td>{{$us->alamat}}</td>
+                    <td>{{$us->email}}</td>
+                    <td>{{$us->tgl_lahir}}</td>
+                    <td>{{$us->no_hp}}</td>
+                    <td>{{$us->role}}</td>
+                </tr>
+            @endforeach
+
+            </tfoot>
+          </table>
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
@@ -38,5 +64,28 @@
     <!-- /.card -->
 
   </section>
+@endsection
+
+@section('footer')
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": [ {
+                extend: 'pdf',
+                title: 'Daftar Pengguna'
+            }]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
 
   @endsection
